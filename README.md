@@ -2,17 +2,6 @@
 
 A code generator for type-safe struct mappings in Go.
 
-## Overview
-
-`modelgen` generates plain Go code that handles type-safe conversion between structs, as an alternative to repetitive mapping code or using reflection at runtime.
-
-**Features:**
-
-- Generates compile-time type-safe mapping code
-- Handles nested structs
-- Supports slice conversions
-- Custom mappings
-
 ## Installation
 
 ```bash
