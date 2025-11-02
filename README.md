@@ -10,59 +10,6 @@ go get github.com/matt0792/modelgen@latest
 
 ## Usage
 
-Create a generator file (e.g., `gen/main.go`):
-
-```go
-package main
-
-import (
-	"log"
-	"github.com/matt0792/modelgen"
-)
-
-func main() {
-	gen := modelgen.New()
-
-    gen.Map(&api.Account{})
-
-	if err := gen.Generate("./models/generated"); err != nil {
-		log.Fatal(err)
-	}
-}
-```
-
-Run the generator:
-
-```bash
-go run gen/main.go
-```
-
-This creates `account.go` with mapping methods:
-
-```go
-externalAccount := fetchFromAPI()
-
-// Convert external model to internal model
-account := (%Account{}).From(&externalAccount)
-
-// Work with your internal model
-account.Name = "Updated Name"
-
-// Convert back (note: see limitations below)
-updated := account.To()
-```
-
-## Status
-
-**This project is incomplete and under active development**
-
-### Known Issues
-
-- **`To()` method is broken for nested struct mappings** - currently generates incorrect conversion code for structs containing other structs
-- Limited error handling in generated code
-
-## Example
-
 Given these structs:
 
 ```go
@@ -191,6 +138,15 @@ func (t *Post) To() api.Post {
 	}
 }
 ```
+
+## Status
+
+**This project is incomplete and under active development**
+
+### Known Issues
+
+- **`To()` method is broken for nested struct mappings** - currently generates incorrect conversion code for structs containing other structs
+- Limited error handling in generated code
 
 ## License
 
