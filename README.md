@@ -21,6 +21,20 @@ gen.Map(&api.User{}) // api.User represents an imported struct type
 gen.Generate("modelgen") // "modelgen" is the output dir
 ```
 
+Now we can do things like: 
+```go
+externalUser := fetchFromAPI()
+
+// Convert external model to internal model
+user := (%User{}).From(&externalUser)
+
+// Work with your internal model
+user.Name = "Updated Name"
+
+// Convert back (see limitations below)
+updated := user.To()
+```
+
 ### Practical usage
 
 Given these structs:
