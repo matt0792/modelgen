@@ -16,7 +16,7 @@ A code generator for type-safe struct mappings in Go.
 ## Installation
 
 ```bash
-go install github.com/matt0792/modelgen@latest
+go get github.com/matt0792/modelgen@latest
 ```
 
 ## Usage
