@@ -12,18 +12,12 @@ go get github.com/matt0792/modelgen@latest
 
 ### Overview
 
-1. Create a model generator:
+Create a model generator, register a mapping, and generate the code:
 ```go
 gen := modelgen.New("models") // "models" is the output package that will be created
-```
 
-2. Register a mapping:
-```go
 gen.Map(&api.User{}) // api.User represents an imported struct type
-```
 
-3. Generate the code:
-```go
 gen.Generate("modelgen") // "modelgen" is the output dir
 ```
 
