@@ -26,7 +26,7 @@ Now we can do things like:
 externalUser := fetchFromAPI()
 
 // Convert external model to internal model
-user := (%User{}).From(&externalUser)
+user := (%models.User{}).From(&externalUser)
 
 // Work with your internal model
 user.Name = "Updated Name"
